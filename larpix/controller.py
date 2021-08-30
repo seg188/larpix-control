@@ -1383,7 +1383,7 @@ class Controller(object):
             chip.config.disable_analog_monitor()
             chip.config.enable_analog_monitor(channel)
             self.write_configuration(chip_key, chip.config.csa_monitor_select_addresses)
-        elif chip.asic_version in (2, 'lightpix-1'):
+        elif chip.asic_version in (2, 'lightpix-1', '2b'):
             chip.config.csa_monitor_select = [0]*chip.config.num_channels
             chip.config.csa_monitor_select[channel] = 1
             self.write_configuration(chip_key, chip.config.register_map['csa_monitor_select'])
